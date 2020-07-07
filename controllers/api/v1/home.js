@@ -1,6 +1,6 @@
 const Home = require("../../../models/home");
 
-
+// add product to homepage
 module.exports.addProduct = async function (req, res) {
   try {
     if (!req.body.product) {
@@ -19,10 +19,9 @@ module.exports.addProduct = async function (req, res) {
       price:req.body.price
     });
 
-
+//link to redirect to the cart,if we want to add this product into our cart
     homeProduct.link_to_addCart = `http://localhost:8000/addCart/${homeProduct._id}/addInCart `;
     homeProduct.save();
-    // question.options.push(newOpt);
 
     return res.json(200, {
       message: "product created",
@@ -35,7 +34,7 @@ module.exports.addProduct = async function (req, res) {
   }
 };
 
-
+//get all product  which are available into home
 module.exports.allProduct = (req, res) => {
   Home.find()
     .then((user) => {
@@ -47,3 +46,27 @@ module.exports.allProduct = (req, res) => {
       });
     });
 };
+
+//delete the question 
+module.exports.deleteProduct = async function (req, res) {
+  try {
+    const prod = await Home.findById(req.params.id)
+    if (!prod) {
+      return res.json(400, {
+        message: "product not found"
+      });
+    }
+
+    prod.remove();
+
+    return res.json(200, {
+      message: "product deleted"
+    })
+
+  }
+  catch (err) {
+    res.json(500, {
+      message: "internal error"
+    })
+  }
+}

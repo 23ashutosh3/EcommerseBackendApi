@@ -1,3 +1,5 @@
+//schema for user cart.user can add product in his cart from home page of a ecommerse 
+
 const mongoose = require("mongoose");
 
 const cartSchema = new mongoose.Schema(

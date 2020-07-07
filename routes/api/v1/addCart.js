@@ -1,3 +1,6 @@
+//cart schema for user ,user can add product into his cart.passport is used so that only
+// login user can add product to in his cart
+
 const express = require("express");
 
 const router = express.Router();

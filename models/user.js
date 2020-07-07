@@ -1,3 +1,5 @@
+//user schema ,user can register and login
+
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
