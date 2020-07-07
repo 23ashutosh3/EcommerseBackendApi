@@ -1,13 +1,13 @@
 # EcommerseBackendApi
 #npm install 
 #for postman
-*router.get("/", homeController.allProduct);
-*router.post("/addProduct",homeController.addProduct);
-*router.delete("/:id/delete", homeController.deleteProduct);
+*http://localhost:8000
+*http://localhost:8000/addProduct
+*http://localhost:8000/5f0391f03aeee523a466dcb8/delete
 
-*router.post("/login", usersController.login);
-*router.post("/register", usersController.register);
+*http://localhost:8000/user/register
+*http://localhost:8000/user/login
 
-router.post("/:id/addInCart", passport.authenticate("jwt", { session: false }), usersController.addInCart);
-
+#router.post("/:id/addInCart", passport.authenticate("jwt", { session: false }), usersController.addInCart);
+*http://localhost:8000/add-cart/5f0391f03aeee523a466dcb8/addInCart
 
