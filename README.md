@@ -1,6 +1,6 @@
 # EcommerseBackendApi
 #npm install 
-for postman
+#for postman
 *router.get("/", homeController.allProduct);
 *router.post("/addProduct",homeController.addProduct);
 *router.delete("/:id/delete", homeController.deleteProduct);
